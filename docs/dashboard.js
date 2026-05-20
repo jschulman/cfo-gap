@@ -32,7 +32,7 @@ function formatPct(x) {
 }
 
 async function loadLatest() {
-  const res = await fetch('../data/latest.json', { cache: 'no-store' });
+  const res = await fetch('data/latest.json', { cache: 'no-store' });
   if (!res.ok) throw new Error('failed to load data/latest.json');
   return res.json();
 }
@@ -41,7 +41,7 @@ async function loadSnapshots() {
   // Pull the manifest of recent snapshots; if the listing isn't enumerable
   // (it's not on GitHub Pages), fall back to the timeseries embedded in latest.json.
   try {
-    const res = await fetch('../data/timeseries.json', { cache: 'no-store' });
+    const res = await fetch('data/timeseries.json', { cache: 'no-store' });
     if (res.ok) return res.json();
   } catch {}
   return null;
