@@ -1,14 +1,14 @@
 {
   "metadata": {
     "source": "The CFO Gap",
-    "last_updated": "2026-05-23",
+    "last_updated": "2026-05-24",
     "version": "1.0",
     "next_update": "daily at 03:00 America/Chicago"
   },
   "headline": {
-    "stall_ratio": 0.4819,
-    "open_total": 469,
-    "stale_60_plus": 226,
+    "stall_ratio": 0.4936,
+    "open_total": 468,
+    "stale_60_plus": 231,
     "label": "% of open senior-finance listings older than 60 days"
   },
   "by_sub_sector": [
@@ -19,40 +19,40 @@
       "stall_ratio": 0.72
     },
     {
+      "sub_sector": "rwa-tokenization",
+      "open": 8,
+      "stale_60_plus": 5,
+      "stall_ratio": 0.625
+    },
+    {
+      "sub_sector": "l1-l2-foundation",
+      "open": 15,
+      "stale_60_plus": 9,
+      "stall_ratio": 0.6
+    },
+    {
       "sub_sector": "defi-protocol",
       "open": 34,
       "stale_60_plus": 20,
       "stall_ratio": 0.5882
     },
     {
-      "sub_sector": "l1-l2-foundation",
-      "open": 16,
-      "stale_60_plus": 9,
-      "stall_ratio": 0.5625
-    },
-    {
       "sub_sector": "custody-wallet",
       "open": 196,
-      "stale_60_plus": 110,
-      "stall_ratio": 0.5612
-    },
-    {
-      "sub_sector": "rwa-tokenization",
-      "open": 8,
-      "stale_60_plus": 4,
-      "stall_ratio": 0.5
+      "stale_60_plus": 112,
+      "stall_ratio": 0.5714
     },
     {
       "sub_sector": "infra-rpc-data",
       "open": 57,
-      "stale_60_plus": 28,
-      "stall_ratio": 0.4912
+      "stale_60_plus": 29,
+      "stall_ratio": 0.5088
     },
     {
       "sub_sector": "fintech-crypto-hybrid",
       "open": 102,
-      "stale_60_plus": 33,
-      "stall_ratio": 0.3235
+      "stale_60_plus": 34,
+      "stall_ratio": 0.3333
     },
     {
       "sub_sector": "defi-trading",
@@ -91,10 +91,16 @@
       "stall_ratio": 0.4819,
       "open_total": 469,
       "stale_60_plus": 226
+    },
+    {
+      "date": "2026-05-24",
+      "stall_ratio": 0.4936,
+      "open_total": 468,
+      "stale_60_plus": 231
     }
   ],
   "hiring_velocity": {
     "opened_7d": 31,
-    "opened_30d": 120
+    "opened_30d": 115
   }
 }
