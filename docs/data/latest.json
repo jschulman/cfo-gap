@@ -1,22 +1,22 @@
 {
   "metadata": {
     "source": "The CFO Gap",
-    "last_updated": "2026-05-26",
+    "last_updated": "2026-05-27",
     "version": "1.0",
     "next_update": "daily at 03:00 America/Chicago"
   },
   "headline": {
-    "stall_ratio": 0.5042,
-    "open_total": 472,
-    "stale_60_plus": 238,
+    "stall_ratio": 0.5105,
+    "open_total": 478,
+    "stale_60_plus": 244,
     "label": "% of open senior-finance listings older than 60 days"
   },
   "by_sub_sector": [
     {
       "sub_sector": "stablecoin-issuer",
-      "open": 25,
-      "stale_60_plus": 18,
-      "stall_ratio": 0.72
+      "open": 24,
+      "stale_60_plus": 17,
+      "stall_ratio": 0.7083
     },
     {
       "sub_sector": "rwa-tokenization",
@@ -31,28 +31,28 @@
       "stall_ratio": 0.6
     },
     {
-      "sub_sector": "defi-protocol",
-      "open": 34,
-      "stale_60_plus": 20,
-      "stall_ratio": 0.5882
+      "sub_sector": "custody-wallet",
+      "open": 202,
+      "stale_60_plus": 120,
+      "stall_ratio": 0.5941
     },
     {
-      "sub_sector": "custody-wallet",
-      "open": 197,
-      "stale_60_plus": 115,
-      "stall_ratio": 0.5838
+      "sub_sector": "defi-protocol",
+      "open": 35,
+      "stale_60_plus": 20,
+      "stall_ratio": 0.5714
     },
     {
       "sub_sector": "infra-rpc-data",
-      "open": 57,
-      "stale_60_plus": 30,
-      "stall_ratio": 0.5263
+      "open": 58,
+      "stale_60_plus": 31,
+      "stall_ratio": 0.5345
     },
     {
       "sub_sector": "fintech-crypto-hybrid",
       "open": 102,
-      "stale_60_plus": 36,
-      "stall_ratio": 0.3529
+      "stale_60_plus": 37,
+      "stall_ratio": 0.3627
     },
     {
       "sub_sector": "defi-trading",
@@ -109,10 +109,16 @@
       "stall_ratio": 0.5042,
       "open_total": 472,
       "stale_60_plus": 238
+    },
+    {
+      "date": "2026-05-27",
+      "stall_ratio": 0.5105,
+      "open_total": 478,
+      "stale_60_plus": 244
     }
   ],
   "hiring_velocity": {
-    "opened_7d": 30,
-    "opened_30d": 115
+    "opened_7d": 23,
+    "opened_30d": 119
   }
 }
