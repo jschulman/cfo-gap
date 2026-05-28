@@ -1,28 +1,28 @@
 {
   "metadata": {
     "source": "The CFO Gap",
-    "last_updated": "2026-05-27",
+    "last_updated": "2026-05-28",
     "version": "1.0",
     "next_update": "daily at 03:00 America/Chicago"
   },
   "headline": {
     "stall_ratio": 0.5105,
-    "open_total": 478,
-    "stale_60_plus": 244,
+    "open_total": 474,
+    "stale_60_plus": 242,
     "label": "% of open senior-finance listings older than 60 days"
   },
   "by_sub_sector": [
     {
       "sub_sector": "stablecoin-issuer",
-      "open": 24,
-      "stale_60_plus": 17,
-      "stall_ratio": 0.7083
+      "open": 23,
+      "stale_60_plus": 16,
+      "stall_ratio": 0.6957
     },
     {
-      "sub_sector": "rwa-tokenization",
-      "open": 8,
-      "stale_60_plus": 5,
-      "stall_ratio": 0.625
+      "sub_sector": "defi-protocol",
+      "open": 33,
+      "stale_60_plus": 20,
+      "stall_ratio": 0.6061
     },
     {
       "sub_sector": "l1-l2-foundation",
@@ -32,27 +32,27 @@
     },
     {
       "sub_sector": "custody-wallet",
-      "open": 202,
-      "stale_60_plus": 120,
-      "stall_ratio": 0.5941
+      "open": 199,
+      "stale_60_plus": 117,
+      "stall_ratio": 0.5879
     },
     {
-      "sub_sector": "defi-protocol",
-      "open": 35,
-      "stale_60_plus": 20,
-      "stall_ratio": 0.5714
+      "sub_sector": "rwa-tokenization",
+      "open": 9,
+      "stale_60_plus": 5,
+      "stall_ratio": 0.5556
     },
     {
       "sub_sector": "infra-rpc-data",
-      "open": 58,
+      "open": 59,
       "stale_60_plus": 31,
-      "stall_ratio": 0.5345
+      "stall_ratio": 0.5254
     },
     {
       "sub_sector": "fintech-crypto-hybrid",
       "open": 102,
-      "stale_60_plus": 37,
-      "stall_ratio": 0.3627
+      "stale_60_plus": 39,
+      "stall_ratio": 0.3824
     },
     {
       "sub_sector": "defi-trading",
@@ -115,10 +115,16 @@
       "stall_ratio": 0.5105,
       "open_total": 478,
       "stale_60_plus": 244
+    },
+    {
+      "date": "2026-05-28",
+      "stall_ratio": 0.5105,
+      "open_total": 474,
+      "stale_60_plus": 242
     }
   ],
   "hiring_velocity": {
-    "opened_7d": 23,
-    "opened_30d": 119
+    "opened_7d": 22,
+    "opened_30d": 115
   }
 }
