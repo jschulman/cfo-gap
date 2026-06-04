@@ -1,34 +1,28 @@
 {
   "metadata": {
     "source": "The CFO Gap",
-    "last_updated": "2026-06-03",
+    "last_updated": "2026-06-04",
     "version": "1.0",
     "next_update": "daily at 03:00 America/Chicago"
   },
   "headline": {
-    "stall_ratio": 0.5011,
-    "open_total": 459,
-    "stale_60_plus": 230,
+    "stall_ratio": 0.4989,
+    "open_total": 457,
+    "stale_60_plus": 228,
     "label": "% of open senior-finance listings older than 60 days"
   },
   "by_sub_sector": [
     {
-      "sub_sector": "infra-rpc-data",
-      "open": 50,
-      "stale_60_plus": 31,
-      "stall_ratio": 0.62
-    },
-    {
       "sub_sector": "defi-protocol",
-      "open": 33,
-      "stale_60_plus": 20,
-      "stall_ratio": 0.6061
+      "open": 29,
+      "stale_60_plus": 18,
+      "stall_ratio": 0.6207
     },
     {
-      "sub_sector": "l1-l2-foundation",
-      "open": 15,
-      "stale_60_plus": 9,
-      "stall_ratio": 0.6
+      "sub_sector": "infra-rpc-data",
+      "open": 51,
+      "stale_60_plus": 31,
+      "stall_ratio": 0.6078
     },
     {
       "sub_sector": "stablecoin-issuer",
@@ -37,10 +31,16 @@
       "stall_ratio": 0.5833
     },
     {
+      "sub_sector": "l1-l2-foundation",
+      "open": 16,
+      "stale_60_plus": 9,
+      "stall_ratio": 0.5625
+    },
+    {
       "sub_sector": "custody-wallet",
-      "open": 193,
+      "open": 196,
       "stale_60_plus": 109,
-      "stall_ratio": 0.5648
+      "stall_ratio": 0.5561
     },
     {
       "sub_sector": "rwa-tokenization",
@@ -50,15 +50,15 @@
     },
     {
       "sub_sector": "fintech-crypto-hybrid",
-      "open": 97,
+      "open": 95,
       "stale_60_plus": 37,
-      "stall_ratio": 0.3814
+      "stall_ratio": 0.3895
     },
     {
       "sub_sector": "defi-trading",
-      "open": 37,
+      "open": 36,
       "stale_60_plus": 5,
-      "stall_ratio": 0.1351
+      "stall_ratio": 0.1389
     }
   ],
   "timeseries": [
@@ -157,10 +157,16 @@
       "stall_ratio": 0.5011,
       "open_total": 459,
       "stale_60_plus": 230
+    },
+    {
+      "date": "2026-06-04",
+      "stall_ratio": 0.4989,
+      "open_total": 457,
+      "stale_60_plus": 228
     }
   ],
   "hiring_velocity": {
-    "opened_7d": 40,
-    "opened_30d": 122
+    "opened_7d": 39,
+    "opened_30d": 124
   }
 }
