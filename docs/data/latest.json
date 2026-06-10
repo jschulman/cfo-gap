@@ -1,64 +1,70 @@
 {
   "metadata": {
     "source": "The CFO Gap",
-    "last_updated": "2026-06-09",
+    "last_updated": "2026-06-10",
     "version": "1.0",
     "next_update": "daily at 03:00 America/Chicago"
   },
   "headline": {
-    "stall_ratio": 0.5022,
-    "open_total": 452,
-    "stale_60_plus": 227,
+    "stall_ratio": 0.4522,
+    "open_total": 2136,
+    "stale_60_plus": 966,
     "label": "% of open senior-finance listings older than 60 days"
   },
   "by_sub_sector": [
     {
       "sub_sector": "infra-rpc-data",
-      "open": 49,
+      "open": 48,
       "stale_60_plus": 31,
-      "stall_ratio": 0.6327
+      "stall_ratio": 0.6458
     },
     {
       "sub_sector": "defi-protocol",
-      "open": 31,
+      "open": 30,
       "stale_60_plus": 19,
-      "stall_ratio": 0.6129
-    },
-    {
-      "sub_sector": "l1-l2-foundation",
-      "open": 15,
-      "stale_60_plus": 9,
-      "stall_ratio": 0.6
+      "stall_ratio": 0.6333
     },
     {
       "sub_sector": "stablecoin-issuer",
       "open": 25,
-      "stale_60_plus": 14,
-      "stall_ratio": 0.56
+      "stale_60_plus": 15,
+      "stall_ratio": 0.6
     },
     {
       "sub_sector": "custody-wallet",
-      "open": 200,
-      "stale_60_plus": 106,
-      "stall_ratio": 0.53
+      "open": 246,
+      "stale_60_plus": 124,
+      "stall_ratio": 0.5041
     },
     {
-      "sub_sector": "rwa-tokenization",
-      "open": 8,
-      "stale_60_plus": 4,
-      "stall_ratio": 0.5
+      "sub_sector": "l1-l2-foundation",
+      "open": 70,
+      "stale_60_plus": 33,
+      "stall_ratio": 0.4714
+    },
+    {
+      "sub_sector": "crypto-unclassified",
+      "open": 1385,
+      "stale_60_plus": 626,
+      "stall_ratio": 0.452
     },
     {
       "sub_sector": "fintech-crypto-hybrid",
-      "open": 91,
-      "stale_60_plus": 38,
-      "stall_ratio": 0.4176
+      "open": 240,
+      "stale_60_plus": 90,
+      "stall_ratio": 0.375
     },
     {
       "sub_sector": "defi-trading",
-      "open": 33,
-      "stale_60_plus": 6,
-      "stall_ratio": 0.1818
+      "open": 65,
+      "stale_60_plus": 21,
+      "stall_ratio": 0.3231
+    },
+    {
+      "sub_sector": "rwa-tokenization",
+      "open": 27,
+      "stale_60_plus": 7,
+      "stall_ratio": 0.2593
     }
   ],
   "timeseries": [
@@ -193,10 +199,16 @@
       "stall_ratio": 0.5022,
       "open_total": 452,
       "stale_60_plus": 227
+    },
+    {
+      "date": "2026-06-10",
+      "stall_ratio": 0.4522,
+      "open_total": 2136,
+      "stale_60_plus": 966
     }
   ],
   "hiring_velocity": {
-    "opened_7d": 41,
-    "opened_30d": 129
+    "opened_7d": 232,
+    "opened_30d": 748
   }
 }
