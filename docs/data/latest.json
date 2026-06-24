@@ -6,9 +6,9 @@
     "next_update": "daily at 03:00 America/Chicago"
   },
   "headline": {
-    "stall_ratio": 0.3333,
-    "open_total": 57,
-    "stale_60_plus": 19,
+    "stall_ratio": 0.3418,
+    "open_total": 79,
+    "stale_60_plus": 27,
     "label": "% of open senior-finance listings older than 60 days"
   },
   "by_sub_sector": [
@@ -25,34 +25,34 @@
       "stall_ratio": 0.6667
     },
     {
-      "sub_sector": "crypto-unclassified",
-      "open": 4,
-      "stale_60_plus": 2,
-      "stall_ratio": 0.5
-    },
-    {
       "sub_sector": "defi-trading",
-      "open": 8,
-      "stale_60_plus": 4,
-      "stall_ratio": 0.5
-    },
-    {
-      "sub_sector": "rwa-tokenization",
-      "open": 2,
-      "stale_60_plus": 1,
-      "stall_ratio": 0.5
-    },
-    {
-      "sub_sector": "custody-wallet",
-      "open": 18,
+      "open": 12,
       "stale_60_plus": 6,
-      "stall_ratio": 0.3333
+      "stall_ratio": 0.5
+    },
+    {
+      "sub_sector": "crypto-unclassified",
+      "open": 8,
+      "stale_60_plus": 3,
+      "stall_ratio": 0.375
     },
     {
       "sub_sector": "fintech-crypto-hybrid",
-      "open": 12,
-      "stale_60_plus": 2,
-      "stall_ratio": 0.1667
+      "open": 21,
+      "stale_60_plus": 7,
+      "stall_ratio": 0.3333
+    },
+    {
+      "sub_sector": "rwa-tokenization",
+      "open": 3,
+      "stale_60_plus": 1,
+      "stall_ratio": 0.3333
+    },
+    {
+      "sub_sector": "custody-wallet",
+      "open": 22,
+      "stale_60_plus": 6,
+      "stall_ratio": 0.2727
     },
     {
       "sub_sector": "defi-protocol",
@@ -286,13 +286,13 @@
     },
     {
       "date": "2026-06-24",
-      "stall_ratio": 0.3333,
-      "open_total": 57,
-      "stale_60_plus": 19
+      "stall_ratio": 0.3418,
+      "open_total": 79,
+      "stale_60_plus": 27
     }
   ],
   "hiring_velocity": {
-    "opened_7d": 6,
-    "opened_30d": 27
+    "opened_7d": 11,
+    "opened_30d": 39
   }
 }
