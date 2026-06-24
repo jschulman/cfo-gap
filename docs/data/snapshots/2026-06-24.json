@@ -6,65 +6,65 @@
     "next_update": "daily at 03:00 America/Chicago"
   },
   "headline": {
-    "stall_ratio": 0.487,
-    "open_total": 3158,
-    "stale_60_plus": 1538,
+    "stall_ratio": 0.3333,
+    "open_total": 57,
+    "stale_60_plus": 19,
     "label": "% of open senior-finance listings older than 60 days"
   },
   "by_sub_sector": [
     {
       "sub_sector": "infra-rpc-data",
-      "open": 54,
-      "stale_60_plus": 34,
-      "stall_ratio": 0.6296
-    },
-    {
-      "sub_sector": "defi-protocol",
-      "open": 32,
-      "stale_60_plus": 18,
-      "stall_ratio": 0.5625
+      "open": 2,
+      "stale_60_plus": 2,
+      "stall_ratio": 1
     },
     {
       "sub_sector": "stablecoin-issuer",
-      "open": 20,
-      "stale_60_plus": 11,
-      "stall_ratio": 0.55
-    },
-    {
-      "sub_sector": "defi-trading",
-      "open": 61,
-      "stale_60_plus": 32,
-      "stall_ratio": 0.5246
+      "open": 3,
+      "stale_60_plus": 2,
+      "stall_ratio": 0.6667
     },
     {
       "sub_sector": "crypto-unclassified",
-      "open": 2303,
-      "stale_60_plus": 1176,
-      "stall_ratio": 0.5106
+      "open": 4,
+      "stale_60_plus": 2,
+      "stall_ratio": 0.5
     },
     {
-      "sub_sector": "l1-l2-foundation",
-      "open": 68,
-      "stale_60_plus": 33,
-      "stall_ratio": 0.4853
-    },
-    {
-      "sub_sector": "custody-wallet",
-      "open": 306,
-      "stale_60_plus": 129,
-      "stall_ratio": 0.4216
-    },
-    {
-      "sub_sector": "fintech-crypto-hybrid",
-      "open": 287,
-      "stale_60_plus": 98,
-      "stall_ratio": 0.3415
+      "sub_sector": "defi-trading",
+      "open": 8,
+      "stale_60_plus": 4,
+      "stall_ratio": 0.5
     },
     {
       "sub_sector": "rwa-tokenization",
-      "open": 27,
-      "stale_60_plus": 7,
-      "stall_ratio": 0.2593
+      "open": 2,
+      "stale_60_plus": 1,
+      "stall_ratio": 0.5
+    },
+    {
+      "sub_sector": "custody-wallet",
+      "open": 18,
+      "stale_60_plus": 6,
+      "stall_ratio": 0.3333
+    },
+    {
+      "sub_sector": "fintech-crypto-hybrid",
+      "open": 12,
+      "stale_60_plus": 2,
+      "stall_ratio": 0.1667
+    },
+    {
+      "sub_sector": "defi-protocol",
+      "open": 1,
+      "stale_60_plus": 0,
+      "stall_ratio": 0
+    },
+    {
+      "sub_sector": "l1-l2-foundation",
+      "open": 7,
+      "stale_60_plus": 0,
+      "stall_ratio": 0
     }
   ],
   "timeseries": [
@@ -286,13 +286,13 @@
     },
     {
       "date": "2026-06-24",
-      "stall_ratio": 0.487,
-      "open_total": 3158,
-      "stale_60_plus": 1538
+      "stall_ratio": 0.3333,
+      "open_total": 57,
+      "stale_60_plus": 19
     }
   ],
   "hiring_velocity": {
-    "opened_7d": 234,
-    "opened_30d": 1102
+    "opened_7d": 6,
+    "opened_30d": 27
   }
 }
