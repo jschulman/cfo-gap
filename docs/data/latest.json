@@ -1,14 +1,14 @@
 {
   "metadata": {
     "source": "The CFO Gap",
-    "last_updated": "2026-06-24",
+    "last_updated": "2026-06-25",
     "version": "1.0",
     "next_update": "daily at 03:00 America/Chicago"
   },
   "headline": {
-    "stall_ratio": 0.3418,
+    "stall_ratio": 0.3165,
     "open_total": 79,
-    "stale_60_plus": 27,
+    "stale_60_plus": 25,
     "label": "% of open senior-finance listings older than 60 days"
   },
   "by_sub_sector": [
@@ -26,21 +26,9 @@
     },
     {
       "sub_sector": "defi-trading",
-      "open": 12,
+      "open": 13,
       "stale_60_plus": 6,
-      "stall_ratio": 0.5
-    },
-    {
-      "sub_sector": "crypto-unclassified",
-      "open": 8,
-      "stale_60_plus": 3,
-      "stall_ratio": 0.375
-    },
-    {
-      "sub_sector": "fintech-crypto-hybrid",
-      "open": 21,
-      "stale_60_plus": 7,
-      "stall_ratio": 0.3333
+      "stall_ratio": 0.4615
     },
     {
       "sub_sector": "rwa-tokenization",
@@ -49,20 +37,32 @@
       "stall_ratio": 0.3333
     },
     {
+      "sub_sector": "fintech-crypto-hybrid",
+      "open": 21,
+      "stale_60_plus": 6,
+      "stall_ratio": 0.2857
+    },
+    {
+      "sub_sector": "crypto-unclassified",
+      "open": 7,
+      "stale_60_plus": 2,
+      "stall_ratio": 0.2857
+    },
+    {
       "sub_sector": "custody-wallet",
       "open": 22,
       "stale_60_plus": 6,
       "stall_ratio": 0.2727
     },
     {
-      "sub_sector": "defi-protocol",
-      "open": 1,
+      "sub_sector": "l1-l2-foundation",
+      "open": 7,
       "stale_60_plus": 0,
       "stall_ratio": 0
     },
     {
-      "sub_sector": "l1-l2-foundation",
-      "open": 7,
+      "sub_sector": "defi-protocol",
+      "open": 1,
       "stale_60_plus": 0,
       "stall_ratio": 0
     }
@@ -289,6 +289,12 @@
       "stall_ratio": 0.3418,
       "open_total": 79,
       "stale_60_plus": 27
+    },
+    {
+      "date": "2026-06-25",
+      "stall_ratio": 0.3165,
+      "open_total": 79,
+      "stale_60_plus": 25
     }
   ],
   "hiring_velocity": {
