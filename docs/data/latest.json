@@ -1,22 +1,28 @@
 {
   "metadata": {
     "source": "The CFO Gap",
-    "last_updated": "2026-07-21",
+    "last_updated": "2026-07-22",
     "version": "1.0",
     "next_update": "daily at 03:00 America/Chicago"
   },
   "headline": {
-    "stall_ratio": 0.4444,
-    "open_total": 72,
+    "stall_ratio": 0.4571,
+    "open_total": 70,
     "stale_60_plus": 32,
     "label": "% of open senior-finance listings older than 60 days"
   },
   "by_sub_sector": [
     {
       "sub_sector": "stablecoin-issuer",
-      "open": 3,
-      "stale_60_plus": 3,
+      "open": 2,
+      "stale_60_plus": 2,
       "stall_ratio": 1
+    },
+    {
+      "sub_sector": "defi-trading",
+      "open": 9,
+      "stale_60_plus": 6,
+      "stall_ratio": 0.6667
     },
     {
       "sub_sector": "infra-rpc-data",
@@ -25,16 +31,10 @@
       "stall_ratio": 0.6667
     },
     {
-      "sub_sector": "defi-trading",
-      "open": 8,
-      "stale_60_plus": 5,
-      "stall_ratio": 0.625
-    },
-    {
       "sub_sector": "fintech-crypto-hybrid",
-      "open": 19,
-      "stale_60_plus": 11,
-      "stall_ratio": 0.5789
+      "open": 18,
+      "stale_60_plus": 10,
+      "stall_ratio": 0.5556
     },
     {
       "sub_sector": "custody-wallet",
@@ -43,20 +43,20 @@
       "stall_ratio": 0.3889
     },
     {
+      "sub_sector": "crypto-unclassified",
+      "open": 15,
+      "stale_60_plus": 4,
+      "stall_ratio": 0.2667
+    },
+    {
       "sub_sector": "l1-l2-foundation",
       "open": 4,
       "stale_60_plus": 1,
       "stall_ratio": 0.25
     },
     {
-      "sub_sector": "crypto-unclassified",
-      "open": 15,
-      "stale_60_plus": 3,
-      "stall_ratio": 0.2
-    },
-    {
       "sub_sector": "defi-protocol",
-      "open": 1,
+      "open": 0,
       "stale_60_plus": 0,
       "stall_ratio": 0
     },
@@ -433,10 +433,16 @@
       "stall_ratio": 0.4444,
       "open_total": 72,
       "stale_60_plus": 32
+    },
+    {
+      "date": "2026-07-22",
+      "stall_ratio": 0.4571,
+      "open_total": 70,
+      "stale_60_plus": 32
     }
   ],
   "hiring_velocity": {
     "opened_7d": 4,
-    "opened_30d": 23
+    "opened_30d": 24
   }
 }
