@@ -1,7 +1,7 @@
 {
   "metadata": {
     "source": "The CFO Gap",
-    "last_updated": "2026-07-31",
+    "last_updated": "2026-08-01",
     "version": "1.0",
     "next_update": "daily at 03:00 America/Chicago"
   },
@@ -25,15 +25,15 @@
       "stall_ratio": 0.6667
     },
     {
-      "sub_sector": "fintech-crypto-hybrid",
-      "open": 18,
-      "stale_60_plus": 9,
-      "stall_ratio": 0.5
-    },
-    {
       "sub_sector": "defi-trading",
       "open": 8,
       "stale_60_plus": 4,
+      "stall_ratio": 0.5
+    },
+    {
+      "sub_sector": "fintech-crypto-hybrid",
+      "open": 18,
+      "stale_60_plus": 9,
       "stall_ratio": 0.5
     },
     {
@@ -55,14 +55,14 @@
       "stall_ratio": 0.2222
     },
     {
-      "sub_sector": "defi-protocol",
-      "open": 0,
+      "sub_sector": "rwa-tokenization",
+      "open": 1,
       "stale_60_plus": 0,
       "stall_ratio": 0
     },
     {
-      "sub_sector": "rwa-tokenization",
-      "open": 1,
+      "sub_sector": "defi-protocol",
+      "open": 0,
       "stale_60_plus": 0,
       "stall_ratio": 0
     }
@@ -493,10 +493,16 @@
       "stall_ratio": 0.3784,
       "open_total": 74,
       "stale_60_plus": 28
+    },
+    {
+      "date": "2026-08-01",
+      "stall_ratio": 0.3784,
+      "open_total": 74,
+      "stale_60_plus": 28
     }
   ],
   "hiring_velocity": {
-    "opened_7d": 8,
-    "opened_30d": 22
+    "opened_7d": 7,
+    "opened_30d": 20
   }
 }
