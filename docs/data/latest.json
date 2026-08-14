@@ -1,13 +1,13 @@
 {
   "metadata": {
     "source": "The CFO Gap",
-    "last_updated": "2026-08-13",
+    "last_updated": "2026-08-14",
     "version": "1.0",
     "next_update": "daily at 03:00 America/Chicago"
   },
   "headline": {
-    "stall_ratio": 0.4051,
-    "open_total": 79,
+    "stall_ratio": 0.4103,
+    "open_total": 78,
     "stale_60_plus": 32,
     "label": "% of open senior-finance listings older than 60 days"
   },
@@ -44,9 +44,9 @@
     },
     {
       "sub_sector": "crypto-unclassified",
-      "open": 22,
+      "open": 23,
       "stale_60_plus": 6,
-      "stall_ratio": 0.2727
+      "stall_ratio": 0.2609
     },
     {
       "sub_sector": "l1-l2-foundation",
@@ -62,7 +62,7 @@
     },
     {
       "sub_sector": "rwa-tokenization",
-      "open": 4,
+      "open": 2,
       "stale_60_plus": 0,
       "stall_ratio": 0
     }
@@ -571,10 +571,16 @@
       "stall_ratio": 0.4051,
       "open_total": 79,
       "stale_60_plus": 32
+    },
+    {
+      "date": "2026-08-14",
+      "stall_ratio": 0.4103,
+      "open_total": 78,
+      "stale_60_plus": 32
     }
   ],
   "hiring_velocity": {
-    "opened_7d": 13,
+    "opened_7d": 11,
     "opened_30d": 35
   }
 }
