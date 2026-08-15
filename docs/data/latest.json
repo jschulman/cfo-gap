@@ -1,14 +1,14 @@
 {
   "metadata": {
     "source": "The CFO Gap",
-    "last_updated": "2026-08-14",
+    "last_updated": "2026-08-15",
     "version": "1.0",
     "next_update": "daily at 03:00 America/Chicago"
   },
   "headline": {
-    "stall_ratio": 0.4103,
-    "open_total": 78,
-    "stale_60_plus": 32,
+    "stall_ratio": 0.4177,
+    "open_total": 79,
+    "stale_60_plus": 33,
     "label": "% of open senior-finance listings older than 60 days"
   },
   "by_sub_sector": [
@@ -44,9 +44,9 @@
     },
     {
       "sub_sector": "crypto-unclassified",
-      "open": 23,
-      "stale_60_plus": 6,
-      "stall_ratio": 0.2609
+      "open": 24,
+      "stale_60_plus": 7,
+      "stall_ratio": 0.2917
     },
     {
       "sub_sector": "l1-l2-foundation",
@@ -577,10 +577,16 @@
       "stall_ratio": 0.4103,
       "open_total": 78,
       "stale_60_plus": 32
+    },
+    {
+      "date": "2026-08-15",
+      "stall_ratio": 0.4177,
+      "open_total": 79,
+      "stale_60_plus": 33
     }
   ],
   "hiring_velocity": {
     "opened_7d": 11,
-    "opened_30d": 35
+    "opened_30d": 34
   }
 }
