@@ -1,14 +1,14 @@
 {
   "metadata": {
     "source": "The CFO Gap",
-    "last_updated": "2026-08-22",
+    "last_updated": "2026-08-23",
     "version": "1.0",
     "next_update": "daily at 03:00 America/Chicago"
   },
   "headline": {
-    "stall_ratio": 0.4474,
-    "open_total": 76,
-    "stale_60_plus": 34,
+    "stall_ratio": 0.4545,
+    "open_total": 77,
+    "stale_60_plus": 35,
     "label": "% of open senior-finance listings older than 60 days"
   },
   "by_sub_sector": [
@@ -23,6 +23,12 @@
       "open": 21,
       "stale_60_plus": 11,
       "stall_ratio": 0.5238
+    },
+    {
+      "sub_sector": "rwa-tokenization",
+      "open": 2,
+      "stale_60_plus": 1,
+      "stall_ratio": 0.5
     },
     {
       "sub_sector": "infra-rpc-data",
@@ -44,19 +50,13 @@
     },
     {
       "sub_sector": "crypto-unclassified",
-      "open": 21,
+      "open": 22,
       "stale_60_plus": 8,
-      "stall_ratio": 0.381
+      "stall_ratio": 0.3636
     },
     {
       "sub_sector": "defi-protocol",
       "open": 0,
-      "stale_60_plus": 0,
-      "stall_ratio": 0
-    },
-    {
-      "sub_sector": "rwa-tokenization",
-      "open": 2,
       "stale_60_plus": 0,
       "stall_ratio": 0
     },
@@ -625,10 +625,16 @@
       "stall_ratio": 0.4474,
       "open_total": 76,
       "stale_60_plus": 34
+    },
+    {
+      "date": "2026-08-23",
+      "stall_ratio": 0.4545,
+      "open_total": 77,
+      "stale_60_plus": 35
     }
   ],
   "hiring_velocity": {
-    "opened_7d": 9,
+    "opened_7d": 10,
     "opened_30d": 37
   }
 }
