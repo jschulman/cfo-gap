@@ -1,14 +1,14 @@
 {
   "metadata": {
     "source": "The CFO Gap",
-    "last_updated": "2026-08-31",
+    "last_updated": "2026-09-01",
     "version": "1.0",
     "next_update": "daily at 03:00 America/Chicago"
   },
   "headline": {
-    "stall_ratio": 0.4359,
-    "open_total": 78,
-    "stale_60_plus": 34,
+    "stall_ratio": 0.4938,
+    "open_total": 81,
+    "stale_60_plus": 40,
     "label": "% of open senior-finance listings older than 60 days"
   },
   "by_sub_sector": [
@@ -25,6 +25,12 @@
       "stall_ratio": 0.6667
     },
     {
+      "sub_sector": "custody-wallet",
+      "open": 16,
+      "stale_60_plus": 9,
+      "stall_ratio": 0.5625
+    },
+    {
       "sub_sector": "rwa-tokenization",
       "open": 2,
       "stale_60_plus": 1,
@@ -37,22 +43,16 @@
       "stall_ratio": 0.4783
     },
     {
+      "sub_sector": "crypto-unclassified",
+      "open": 21,
+      "stale_60_plus": 9,
+      "stall_ratio": 0.4286
+    },
+    {
       "sub_sector": "defi-trading",
       "open": 12,
       "stale_60_plus": 5,
       "stall_ratio": 0.4167
-    },
-    {
-      "sub_sector": "custody-wallet",
-      "open": 13,
-      "stale_60_plus": 5,
-      "stall_ratio": 0.3846
-    },
-    {
-      "sub_sector": "crypto-unclassified",
-      "open": 21,
-      "stale_60_plus": 7,
-      "stall_ratio": 0.3333
     },
     {
       "sub_sector": "defi-protocol",
@@ -679,10 +679,16 @@
       "stall_ratio": 0.4359,
       "open_total": 78,
       "stale_60_plus": 34
+    },
+    {
+      "date": "2026-09-01",
+      "stall_ratio": 0.4938,
+      "open_total": 81,
+      "stale_60_plus": 40
     }
   ],
   "hiring_velocity": {
-    "opened_7d": 7,
-    "opened_30d": 35
+    "opened_7d": 6,
+    "opened_30d": 36
   }
 }
