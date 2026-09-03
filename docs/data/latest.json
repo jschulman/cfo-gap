@@ -1,13 +1,13 @@
 {
   "metadata": {
     "source": "The CFO Gap",
-    "last_updated": "2026-09-02",
+    "last_updated": "2026-09-03",
     "version": "1.0",
     "next_update": "daily at 03:00 America/Chicago"
   },
   "headline": {
-    "stall_ratio": 0.4878,
-    "open_total": 82,
+    "stall_ratio": 0.4938,
+    "open_total": 81,
     "stale_60_plus": 40,
     "label": "% of open senior-finance listings older than 60 days"
   },
@@ -26,9 +26,9 @@
     },
     {
       "sub_sector": "custody-wallet",
-      "open": 16,
+      "open": 15,
       "stale_60_plus": 9,
-      "stall_ratio": 0.5625
+      "stall_ratio": 0.6
     },
     {
       "sub_sector": "rwa-tokenization",
@@ -691,10 +691,16 @@
       "stall_ratio": 0.4878,
       "open_total": 82,
       "stale_60_plus": 40
+    },
+    {
+      "date": "2026-09-03",
+      "stall_ratio": 0.4938,
+      "open_total": 81,
+      "stale_60_plus": 40
     }
   ],
   "hiring_velocity": {
-    "opened_7d": 5,
-    "opened_30d": 37
+    "opened_7d": 4,
+    "opened_30d": 35
   }
 }
