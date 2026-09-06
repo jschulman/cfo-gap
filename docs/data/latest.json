@@ -1,7 +1,7 @@
 {
   "metadata": {
     "source": "The CFO Gap",
-    "last_updated": "2026-09-05",
+    "last_updated": "2026-09-06",
     "version": "1.0",
     "next_update": "daily at 03:00 America/Chicago"
   },
@@ -709,10 +709,16 @@
       "stall_ratio": 0.4875,
       "open_total": 80,
       "stale_60_plus": 39
+    },
+    {
+      "date": "2026-09-06",
+      "stall_ratio": 0.4875,
+      "open_total": 80,
+      "stale_60_plus": 39
     }
   ],
   "hiring_velocity": {
     "opened_7d": 6,
-    "opened_30d": 36
+    "opened_30d": 33
   }
 }
