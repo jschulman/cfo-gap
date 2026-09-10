@@ -1,14 +1,14 @@
 {
   "metadata": {
     "source": "The CFO Gap",
-    "last_updated": "2026-09-09",
+    "last_updated": "2026-09-10",
     "version": "1.0",
     "next_update": "daily at 03:00 America/Chicago"
   },
   "headline": {
-    "stall_ratio": 0.4815,
-    "open_total": 81,
-    "stale_60_plus": 39,
+    "stall_ratio": 0.4634,
+    "open_total": 82,
+    "stale_60_plus": 38,
     "label": "% of open senior-finance listings older than 60 days"
   },
   "by_sub_sector": [
@@ -45,14 +45,14 @@
     {
       "sub_sector": "crypto-unclassified",
       "open": 19,
-      "stale_60_plus": 9,
-      "stall_ratio": 0.4737
+      "stale_60_plus": 8,
+      "stall_ratio": 0.4211
     },
     {
       "sub_sector": "fintech-crypto-hybrid",
-      "open": 24,
+      "open": 25,
       "stale_60_plus": 10,
-      "stall_ratio": 0.4167
+      "stall_ratio": 0.4
     },
     {
       "sub_sector": "defi-protocol",
@@ -733,10 +733,16 @@
       "stall_ratio": 0.4815,
       "open_total": 81,
       "stale_60_plus": 39
+    },
+    {
+      "date": "2026-09-10",
+      "stall_ratio": 0.4634,
+      "open_total": 82,
+      "stale_60_plus": 38
     }
   ],
   "hiring_velocity": {
-    "opened_7d": 7,
-    "opened_30d": 37
+    "opened_7d": 10,
+    "opened_30d": 38
   }
 }
