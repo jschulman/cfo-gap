@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The CFO Gap</title>
-  <meta name="description" content="Tracking the crypto-native middle-market's struggle to staff senior finance roles. Open data, no tracking.">
+  <meta name="description" content="Tracking persistent finance job listings at crypto-native companies. Open data, no tracking.">
   <link rel="stylesheet" href="style.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
@@ -13,7 +13,7 @@
   <header class="site-header">
     <div class="container">
       <h1 class="site-title">The CFO Gap</h1>
-      <p class="site-subtitle">Tracking the crypto-native middle-market's struggle to staff senior finance roles</p>
+      <p class="site-subtitle">Tracking persistent finance job listings at crypto-native companies</p>
       <p class="last-updated" id="last-updated">Last updated: loading…</p>
     </div>
   </header>
@@ -24,7 +24,7 @@
       <div class="hero-inner">
         <div class="score-display">
           <div class="score-number" id="hero-score">—</div>
-          <div class="score-label">%</div>
+          <div class="score-label">older than 60 days</div>
         </div>
         <div class="score-meta">
           <div class="phase-label" id="hero-phase">Loading…</div>
@@ -35,14 +35,15 @@
 
     <!-- Sub-sector breakdown -->
     <section class="table-section">
-      <h2 class="section-title">Stall Ratio by Sub-Sector</h2>
+      <h2 class="section-title">Persistent Listings by Sub-Sector</h2>
+      <p class="chart-caption">Groups with fewer than 10 open listings show counts only. No eligible listings means the share is unknown.</p>
       <table class="subsector-table" id="subsector-table">
         <thead>
           <tr>
             <th>Sub-sector</th>
             <th class="subsector-numeric">Open</th>
-            <th class="subsector-numeric">Stale 60+</th>
-            <th class="subsector-numeric">Stall ratio</th>
+            <th class="subsector-numeric">Older than 60 days</th>
+            <th class="subsector-numeric">Share older than 60 days</th>
           </tr>
         </thead>
         <tbody id="subsector-tbody">
@@ -53,11 +54,14 @@
 
     <!-- Timeseries -->
     <section class="chart-section">
-      <h2 class="section-title">Stall Ratio Over Time</h2>
+      <h2 class="section-title">Persistent Listing Share Over Time</h2>
+      <p class="chart-caption">Finance-role classification and the eligible denominator changed on June 24, 2026. Earlier periods are not directly comparable.</p>
       <div class="chart-wrap">
         <canvas id="timeline-chart" height="240"></canvas>
       </div>
     </section>
+    <p class="chart-caption" id="method-note"></p>
+    <p class="chart-caption">This crypto-native baseline is a selected employer sample. It does not measure blockchain adoption across banks, brokers, payment processors, or other incumbent businesses.</p>
   </main>
 
   <footer class="site-footer">
@@ -68,6 +72,10 @@
         <a href="https://jschulman.github.io/crypto-tool-curve">crypto-tool-curve</a>
         <a href="https://jschulman.github.io/compliance-canary">compliance-canary</a>
         <a href="https://jschulman.github.io/comp-pulse">comp-pulse</a>
+      </div>
+      <div class="canaries-row">
+        <a href="https://jschulman.github.io/stablecoin-signal/#financial-rails">Financial Rails</a>
+        <a href="https://jayschulman.com/blockchain#incumbent-panel">Incumbent employer panel</a>
       </div>
       <div>Sibling to <strong>The Canaries</strong></div>
       <div class="canaries-row">

@@ -1,154 +1,95 @@
-// The CFO Gap — dashboard renderer
-// Reads data/latest.json (and recent snapshots) and renders three views:
-//   1. Headline stall ratio + phase label
-//   2. Per-sub-sector table sorted by stall ratio
-//   3. Time series of corpus-wide stall ratio
-
+// cfo-gap — observable demand and explicit missing data.
 'use strict';
 
-const PHASES = [
-  { max: 0.25, label: 'Fluid',    desc: 'Sector hiring at normal pace; talent is reaching companies.' },
-  { max: 0.50, label: 'Tight',    desc: 'Real friction in finding qualified senior finance talent.' },
-  { max: 0.75, label: 'Stalled',  desc: 'The talent pipeline is failing the sector.' },
-  { max: 1.00, label: 'Drought',  desc: 'Finance org build-outs frozen; outsourcing or compliance failure looms.' },
-];
-
-function phaseFor(ratio) {
-  for (const p of PHASES) {
-    if (ratio <= p.max) return p;
-  }
-  return PHASES[PHASES.length - 1];
+const known = value => typeof value === 'number' && Number.isFinite(value);
+const count = value => known(value) ? Math.round(value).toLocaleString('en-US') : '—';
+const rate = (numerator, denominator) => known(numerator) && known(denominator) && denominator > 0 && numerator >= 0 && numerator <= denominator ? numerator / denominator : null;
+const pct = (value, digits = 1) => known(value) ? (value * 100).toFixed(digits) + '%' : '—';
+const text = (id, value) => { document.getElementById(id).textContent = value; };
+function escapeHtml(value) {
+  return String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 }
-
-function bandClassFor(ratio) {
-  if (ratio >= 0.75) return 'high';
-  if (ratio >= 0.50) return 'mid';
-  return 'low';
+function observationDate(data) {
+  return data.metadata.as_of_date || data.timeseries?.at(-1)?.date || data.metadata.last_updated;
 }
-
-function formatPct(x) {
-  if (x == null || !isFinite(x)) return '—';
-  return (x * 100).toFixed(0) + '%';
+function freshness(data, detail) {
+  const date = observationDate(data);
+  const age = date ? Math.floor((Date.now() - Date.parse(date)) / 86400000) : null;
+  const status = known(age) && age > 2 ? ` · ${age} days old` : '';
+  text('last-updated', `Observation: ${date || 'unknown'}${status} · ${detail}`);
+  text('method-note', `Method: ${data.metadata.methodology_version || data.metadata.version || 'unversioned'}. Historical gaps are unknown, not zero. Changes in coverage or definitions can affect comparisons.`);
 }
-
 async function loadLatest() {
   const res = await fetch('data/latest.json', { cache: 'no-store' });
-  if (!res.ok) throw new Error('failed to load data/latest.json');
+  if (!res.ok) throw new Error('Unable to load the latest observations.');
   return res.json();
 }
-
-async function loadSnapshots() {
-  // Pull the manifest of recent snapshots; if the listing isn't enumerable
-  // (it's not on GitHub Pages), fall back to the timeseries embedded in latest.json.
-  try {
-    const res = await fetch('data/timeseries.json', { cache: 'no-store' });
-    if (res.ok) return res.json();
-  } catch {}
-  return null;
-}
-
-function renderHeadline(data) {
-  const ratio = data.headline.stall_ratio;
-  const phase = phaseFor(ratio);
-  document.getElementById('hero-score').textContent = formatPct(ratio);
-  document.getElementById('hero-phase').textContent = phase.label;
-  document.getElementById('hero-description').textContent = phase.desc;
-  document.getElementById('last-updated').textContent =
-    `Last updated: ${data.metadata.last_updated} · n=${data.headline.open_total} open finance listings, ${data.headline.stale_60_plus} stale 60+`;
-}
-
-function renderSubsectorTable(data) {
-  const rows = (data.by_sub_sector || [])
-    .filter(s => s.sub_sector !== '_all_' && s.open > 0)
-    .sort((a, b) => b.stall_ratio - a.stall_ratio);
-
-  const tbody = document.getElementById('subsector-tbody');
-  if (!rows.length) {
-    tbody.innerHTML = '<tr><td colspan="4" style="text-align:center;color:var(--text-secondary);padding:1.5rem;">No data yet</td></tr>';
-    return;
+// Daily observations are authoritative within the same exported document.
+// Missing calendar dates are inserted so a line cannot bridge an unobserved day.
+function dailySeries(points) {
+  const sorted = points.slice().sort((a, b) => a.date.localeCompare(b.date));
+  const result = [];
+  for (const point of sorted) {
+    const previous = result.at(-1);
+    if (previous) {
+      let next = Date.parse(previous.date) + 86400000;
+      const end = Date.parse(point.date);
+      while (Number.isFinite(next) && next < end) {
+        result.push({ date: new Date(next).toISOString().slice(0, 10) });
+        next += 86400000;
+      }
+    }
+    result.push(point);
   }
-  tbody.innerHTML = rows.map(s => {
-    const pct = formatPct(s.stall_ratio);
-    const cls = bandClassFor(s.stall_ratio);
-    const widthPct = Math.max(2, Math.min(100, s.stall_ratio * 100));
-    return `
-      <tr>
-        <td class="subsector-name">${escapeHtml(s.sub_sector)}</td>
-        <td class="subsector-numeric">${s.open}</td>
-        <td class="subsector-numeric">${s.stale_60_plus}</td>
-        <td class="subsector-numeric">
-          ${pct}
-          <span class="ratio-bar" aria-hidden="true"><span class="ratio-bar-fill ${cls}" style="width:${widthPct}%"></span></span>
-        </td>
-      </tr>
-    `;
-  }).join('');
+  return result;
 }
-
-function renderTimeline(data, ts) {
-  const series = (ts && ts.points) ? ts.points : (data.timeseries || []);
-  const labels = series.map(p => p.date);
-  const values = series.map(p => Number((p.stall_ratio * 100).toFixed(1)));
-
-  const ctx = document.getElementById('timeline-chart').getContext('2d');
-  // eslint-disable-next-line no-new
-  new Chart(ctx, {
+function lineChart(id, series, values, label, percentage = false) {
+  new Chart(document.getElementById(id).getContext('2d'), {
     type: 'line',
-    data: {
-      labels,
-      datasets: [{
-        label: 'Stall ratio (corpus-wide)',
-        data: values,
-        borderColor: '#f6c440',
-        backgroundColor: 'rgba(246, 196, 64, 0.12)',
-        fill: true,
-        tension: 0.25,
-        pointRadius: series.length > 30 ? 0 : 3,
-        pointHoverRadius: 5,
-      }],
-    },
+    data: { labels: series.map(p => p.date), datasets: [{
+      label, data: values, spanGaps: false,
+      borderColor: '#f6c440', backgroundColor: 'rgba(246,196,64,0.12)',
+      fill: true, tension: 0.2,
+      pointRadius: values.map((value, index) => known(value) && (series.length <= 30 || (!known(values[index - 1]) && !known(values[index + 1]))) ? 3 : 0),
+      pointHoverRadius: 5,
+    }] },
     options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: {
-        legend: { display: false },
-        tooltip: {
-          callbacks: {
-            label: (item) => `${item.parsed.y.toFixed(1)}% stalled`,
-          },
-        },
-      },
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false }, tooltip: { callbacks: {
+        label: item => known(item.parsed.y) ? `${item.parsed.y.toFixed(1)}${percentage ? '%' : ''} ${label}` : 'Unknown',
+      } } },
       scales: {
-        x: {
-          ticks: { color: '#8b949e', maxRotation: 0, autoSkip: true, maxTicksLimit: 12 },
-          grid:  { color: 'rgba(139,148,158,0.08)' },
-        },
-        y: {
-          min: 0, max: 100,
-          ticks: { color: '#8b949e', callback: (v) => v + '%' },
-          grid:  { color: 'rgba(139,148,158,0.08)' },
-        },
+        x: { ticks: { color: '#8b949e', maxRotation: 0, autoSkip: true, maxTicksLimit: 12 }, grid: { color: 'rgba(139,148,158,0.08)' } },
+        y: { min: 0, ...(percentage ? { max: 100 } : {}), ticks: { color: '#8b949e', callback: v => v + (percentage ? '%' : '') }, grid: { color: 'rgba(139,148,158,0.08)' } },
       },
     },
   });
 }
-
-function escapeHtml(s) {
-  return String(s).replace(/[&<>"']/g, c => ({
-    '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;',
-  })[c]);
+function demandTable(id, rows, field, denominator, companies = false) {
+  const cells = companies ? 4 : 3;
+  document.getElementById(id).innerHTML = rows.length ? rows.slice().sort((a, b) => b.n - a.n).map(row => {
+    const share = rate(row.n, denominator);
+    return `<tr><td class="subsector-name">${escapeHtml(row[field])}</td><td class="subsector-numeric">${count(row.n)}</td><td class="subsector-numeric">${pct(share)}</td>${companies ? `<td class="subsector-numeric">${count(row.n_companies)}</td>` : ''}</tr>`;
+  }).join('') : `<tr><td colspan="${cells}" style="text-align:center;padding:1.5rem;">No observations available</td></tr>`;
+}
+function unavailable(error) {
+  text('hero-score', '—'); text('hero-phase', 'Data unavailable');
+  text('hero-description', 'The latest observations could not be loaded. Please try again later.');
+  text('last-updated', 'Observation date unavailable');
+  console.error(error);
 }
 
-(async function init() {
-  try {
-    const [data, ts] = await Promise.all([loadLatest(), loadSnapshots()]);
-    renderHeadline(data);
-    renderSubsectorTable(data);
-    renderTimeline(data, ts);
-  } catch (err) {
-    document.getElementById('hero-score').textContent = '—';
-    document.getElementById('hero-phase').textContent = 'Data unavailable';
-    document.getElementById('hero-description').textContent = String(err && err.message ? err.message : err);
-    console.error(err);
-  }
-})();
+function render(data) {
+  const h = data.headline;
+  const value = rate(h.stale_60_plus, h.open_total);
+  text('hero-score', h.open_total > 0 && h.open_total < 10 ? `${count(h.stale_60_plus)} / ${count(h.open_total)}` : pct(value, 0));
+  text('hero-phase', value == null ? 'No eligible observations' : h.open_total < 10 ? 'Small sample' : 'Persistent finance listings');
+  text('hero-description', `${count(h.stale_60_plus)} of ${count(h.open_total)} open finance listings are older than 60 days. Long-lived postings may indicate hiring friction, evergreen recruitment, or changed plans; they do not establish a staffing failure or outsourcing need.`);
+  freshness(data, `${count(h.open_total)} open finance listings · crypto-native baseline`);
+  const rows = (data.by_sub_sector || []).filter(row => row.sub_sector !== '_all_').sort((a, b) => (rate(b.stale_60_plus, b.open) ?? -1) - (rate(a.stale_60_plus, a.open) ?? -1));
+  document.getElementById('subsector-tbody').innerHTML = rows.length ? rows.map(row => `<tr><td class="subsector-name">${escapeHtml(row.sub_sector)}</td><td class="subsector-numeric">${count(row.open)}</td><td class="subsector-numeric">${count(row.stale_60_plus)}</td><td class="subsector-numeric">${row.open > 0 && row.open < 10 ? 'Small sample' : pct(rate(row.stale_60_plus, row.open), 0)}</td></tr>`).join('') : '<tr><td colspan="4">No observations available</td></tr>';
+  const series = dailySeries(data.timeseries || []);
+  lineChart('timeline-chart', series, series.map(p => { const value = rate(p.stale_60_plus, p.open_total); return value == null ? null : value * 100; }), 'of open listings older than 60 days', true);
+}
+
+loadLatest().then(render).catch(unavailable);

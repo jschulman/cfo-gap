@@ -1,101 +1,43 @@
 # Methodology
 
-How The CFO Gap is computed, what its limits are, and how to read its numbers honestly.
-
-## One question
-
-Can crypto-native middle-market companies staff their senior finance roles?
-
-## The metric
-
-**Senior Finance Stall Ratio**, defined per sub-sector and corpus-wide:
+How many observed, open finance listings have remained visible for more than 60 days?
 
 ```
-stall_ratio = (open finance listings older than 60 days) / (open finance listings)
+persistent_listing_share = open eligible listings older than 60 days / open eligible listings
 ```
 
-Where:
-- **"Open"** means the listing was present in the most recent scan of the company's public job-board feed.
-- **"Older than 60 days"** is measured from the listing's `publishedAt` timestamp (where the ATS exposes one — Ashby and Lever do; Greenhouse via `first_published`) OR from the date the scanner first observed the listing (whichever is earlier).
-- **"Finance listings"** are job postings matching a fixed taxonomy of accounting and finance roles: Controller, Assistant Controller, Corporate Controller, VP Finance, Head of Finance, CFO, Accounting Manager, Senior Accounting Manager, Accounting Lead, Senior Accountant, Tax Manager, Tax Director, FP&A Manager, FP&A Director, Technical Accounting Manager, Revenue Accountant, Staff Accountant, AP/AR Specialist, Treasury Manager, Internal Audit Manager, SOX/Compliance Manager. Bookkeeper and Payroll roles are captured for completeness but excluded from the stall metric.
+Both counts appear beside the percentage. No open listings means the share is unknown. Groups with fewer than 10 open listings show counts and a small-sample notice rather than a percentage verdict; 10 is a display threshold, not a statistical confidence guarantee. The historical field name `stall_ratio` is retained for compatibility.
 
-## Data source
+A posting is open when the scanner still identifies it as open. Age follows the producer's `age_days_live` observation: whole elapsed days since the scanner first observed the listing. It does not use the employer's publication date. First observation is an imperfect proxy for when recruiting actually began. The numerator uses **strictly more than 60 days**. Hiring-velocity aggregates, where published, count jobs first observed within 7 or 30 days; they do not establish actual opening or hiring dates.
 
-The scanner queries public job-board APIs:
-- **Ashby:** `https://api.ashbyhq.com/posting-api/job-board/{slug}`
-- **Greenhouse:** `https://boards-api.greenhouse.io/v1/boards/{slug}/jobs?content=true`
-- **Lever:** `https://api.lever.co/v0/postings/{slug}?mode=json`
+## Eligible finance roles
 
-For each company in the curated target list, the scanner pulls all open postings, classifies titles into the finance taxonomy, computes per-listing age from the `publishedAt` / `first_published` / `createdAt` field, and writes a daily snapshot.
+Controller and assistant-controller variants; finance leadership and CFO; strategic finance; accounting management and leads; senior, financial, staff, fund and other matched accountants; tax management; FP&A; technical accounting and financial reporting; AP/AR; treasury management; internal audit; and SOX/compliance roles. Titles are matched by ordered, case-insensitive patterns. Bookkeeper and payroll-manager capture-only roles are excluded. This includes individual contributors, so “senior finance” does not precisely describe the entire sample.
 
-All data is **public**. No portal logins. No robots.txt bypass. Per-domain rate limiting. User-Agent identifies the project.
+## Sources and coverage
 
-## Target universe
+The private producer polls public Ashby, Greenhouse and Lever job-board feeds and publishes aggregates here. The crypto-native baseline is a selected, evolving employer sample; it is not a census or a representative survey. Company additions, exclusions, title classification, job-board coverage and collection failures can change the sample. Companies without observed eligible jobs are not represented in a JD denominator.
 
-The curated target list covers crypto-native middle-market companies meeting these criteria:
-- Primary business is crypto-native (not "crypto-curious" fintech)
-- Last priced round: Series B, C, or D (or equivalent token raise scale)
-- Headcount: roughly 50–500
-- Last funding event within 36 months
-- US or US-adjacent operations
+The baseline is retained separately from any expanded panel of incumbent financial businesses. An incumbent employer must not be added to this series simply to widen market observation. Employer type, infrastructure-provider role and use case are separate attributes in the expanded research panel. A crypto-native firm can also provide financial infrastructure.
 
-Hard exclusions:
-- Too small (seed / pre-seed / Series A under $10M raised)
-- Too big (Coinbase, Binance, Kraken, Block, Robinhood Crypto, Tether, Circle, public crypto companies)
-- Dead or distressed (active bankruptcy, last raise >36 months ago with no revenue signal)
+Daily refresh is the intended cadence. The date shown in the dashboard is the observation date, which can precede publication. A scheduled workflow or recent export is not proof that every employer feed was refreshed successfully. Snapshots live in `data/` and `docs/data/`; the dashboard reads `docs/data/latest.json`.
 
-The target list is maintained privately and refreshed quarterly.
+## Interpretation
 
-## Sub-sector taxonomy
+Persistent listings may indicate hiring friction, evergreen recruiting, an unchanged job-board entry or revised hiring plans. They do not establish a failed talent pipeline, demand for outsourcing, time-to-fill, or the quality of candidates. A disappeared listing may have been filled, withdrawn, moved or missed by collection.
 
-Each company is tagged with one primary sub-sector:
-- `stablecoin-issuer` — USD-backed stablecoin issuers
-- `custody-wallet` — institutional and consumer custody, wallets
-- `l1-l2-foundation` — Layer 1 and Layer 2 blockchain protocol companies
-- `defi-protocol` — DeFi protocol teams
-- `infra-rpc-data` — RPC, indexing, data infrastructure
-- `defi-trading` — institutional crypto trading infrastructure
-- `rwa-tokenization` — real-world asset tokenization
-- `fintech-crypto-hybrid` — fintech / payments / exchanges with crypto exposure
+The dashboard reports sub-sector counts and the baseline history. Sub-sectors are classifications of employers, not disjoint descriptions of every business activity. Small groups are particularly sensitive to one posting.
 
-## Update cadence
+## Material historical changes
 
-The dashboard refreshes daily. Each snapshot includes:
-- A timestamp
-- Headline stall ratio (corpus-wide)
-- Per-sub-sector stall ratio + denominator
-- Hiring velocity (listings opened in trailing 7d and 30d)
-- Average finance role age, per sub-sector
+On **2026-06-24**, the producer corrected the open-listing denominator to finance-classified roles and broadened finance title matching. Earlier observations can include a wider role population and are not directly comparable with the corrected series. The current interpretation update does not silently rewrite those observations.
 
-Snapshots are versioned under `data/snapshots/YYYY-MM-DD.json`. The dashboard reads `data/latest.json`.
+## Missing data and historical comparability
 
-## Caveats and limits
+An unknown numerator or a zero/unknown denominator produces an unknown percentage, displayed as `—`; it is never interpreted as 0%. Missing calendar dates and unavailable values remain gaps in charts. A measured zero requires a known, positive denominator. Material definition changes can break comparability even where a chart is continuous.
 
-- **"Open" means "present in the most recent scan."** When a listing disappears from the feed, we mark it closed — but this can mean "filled" OR "withdrawn" OR "the company switched ATS providers." We don't claim to measure time-to-fill.
-- **Listings older than 60 days is a strong stall signal but not a perfect one.** Some companies leave roles permanently posted as evergreen. The metric works best in aggregate, not per individual listing.
-- **The target list is curated.** We are intentionally focused on a defined buyer-profile, not the entire crypto universe. Larger companies (Series E+) and smaller ones (pre-Series A) are excluded by design.
-- **Sub-sectors are author-assigned.** A company like "Anchorage Digital" is `custody-wallet` here; you might argue `defi-trading` is equally valid. We commit to one primary tag and document secondary tags privately.
-- **First-pass classifier.** Job titles are matched against regex patterns. Real-world title variation ("Global Markets Accounting Lead", "Member of Accounting, Portugal Center of Excellence") is captured but not perfectly.
-
-## What this cannot tell you
-
-- Whether a specific role is "filled" (only that we stopped seeing it)
-- Which companies are about to staff up (no LinkedIn signal layer)
-- Whether the talent is good (only that it's not being hired)
-- Anything about private hiring (we only see public postings)
-
-## Versioning
-
-Methodology versions are tracked in this file. Material changes will bump the `version` field in `data/latest.json` and be noted here.
-
-Current version: **1.0** (2026-05-19).
+The 2026-09-25 interpretation update removes unsupported success/failure verdicts. Version 2.0 producer snapshots identify the updated methodology in metadata; older snapshots retain their original version. Original aggregate series and URLs remain available. Generated snapshots are published by the producer, not fabricated by the dashboard.
 
 ## Reproducibility
 
-You can replicate The CFO Gap if you:
-1. Curate your own list of crypto-native middle-market companies and their ATS slugs.
-2. Poll their public job-board APIs daily.
-3. Apply the role taxonomy above.
-4. Compute the stall ratio per the formula above.
-
-The target list and scanner code are maintained privately (the source repository contains operational exclusions and rubric weights that are not appropriate for public release). The methodology above is the canonical specification.
+Replicate the selected employer feeds, eligibility rules, title and text patterns, and snapshot date. Keep dated counts and denominators together. Save unique-job and company counts at collection time; do not derive old coverage from today’s database. The private producer owns collection and aggregation; this repository renders the published aggregates.
