@@ -1,15 +1,15 @@
 {
   "metadata": {
     "source": "The CFO Gap",
-    "last_updated": "2026-10-11",
-    "as_of_date": "2026-10-11",
-    "generated_at": "2026-10-11T08:30:02.045Z",
+    "last_updated": "2026-10-12",
+    "as_of_date": "2026-10-12",
+    "generated_at": "2026-10-12T08:30:01.721Z",
     "version": "2.0",
     "next_update": "daily at 03:00 America/Chicago"
   },
   "headline": {
-    "stall_ratio": 0.52,
-    "open_total": 75,
+    "stall_ratio": 0.5342,
+    "open_total": 73,
     "stale_60_plus": 39,
     "label": "% of currently observed finance listings older than 60 days; hiring-friction proxy"
   },
@@ -21,15 +21,15 @@
       "stall_ratio": 1
     },
     {
-      "sub_sector": "custody-wallet",
-      "open": 15,
-      "stale_60_plus": 10,
-      "stall_ratio": 0.6667
-    },
-    {
       "sub_sector": "l1-l2-foundation",
       "open": 3,
       "stale_60_plus": 2,
+      "stall_ratio": 0.6667
+    },
+    {
+      "sub_sector": "custody-wallet",
+      "open": 15,
+      "stale_60_plus": 10,
       "stall_ratio": 0.6667
     },
     {
@@ -45,16 +45,16 @@
       "stall_ratio": 0.55
     },
     {
-      "sub_sector": "crypto-unclassified",
-      "open": 23,
-      "stale_60_plus": 9,
-      "stall_ratio": 0.3913
+      "sub_sector": "defi-trading",
+      "open": 7,
+      "stale_60_plus": 3,
+      "stall_ratio": 0.4286
     },
     {
-      "sub_sector": "defi-trading",
-      "open": 8,
-      "stale_60_plus": 3,
-      "stall_ratio": 0.375
+      "sub_sector": "crypto-unclassified",
+      "open": 22,
+      "stale_60_plus": 9,
+      "stall_ratio": 0.4091
     },
     {
       "sub_sector": "defi-protocol",
@@ -927,10 +927,16 @@
       "stall_ratio": 0.52,
       "open_total": 75,
       "stale_60_plus": 39
+    },
+    {
+      "date": "2026-10-12",
+      "stall_ratio": 0.5342,
+      "open_total": 73,
+      "stale_60_plus": 39
     }
   ],
   "hiring_velocity": {
     "opened_7d": 3,
-    "opened_30d": 34
+    "opened_30d": 33
   }
 }
