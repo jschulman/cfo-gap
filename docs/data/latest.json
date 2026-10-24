@@ -1,16 +1,16 @@
 {
   "metadata": {
     "source": "The CFO Gap",
-    "last_updated": "2026-10-23",
-    "as_of_date": "2026-10-23",
-    "generated_at": "2026-10-23T08:30:01.671Z",
+    "last_updated": "2026-10-24",
+    "as_of_date": "2026-10-24",
+    "generated_at": "2026-10-24T08:30:01.889Z",
     "version": "2.0",
     "next_update": "daily at 03:00 America/Chicago"
   },
   "headline": {
-    "stall_ratio": 0.4932,
+    "stall_ratio": 0.4795,
     "open_total": 73,
-    "stale_60_plus": 36,
+    "stale_60_plus": 35,
     "label": "% of currently observed finance listings older than 60 days; hiring-friction proxy"
   },
   "by_sub_sector": [
@@ -52,15 +52,15 @@
     },
     {
       "sub_sector": "fintech-crypto-hybrid",
-      "open": 16,
-      "stale_60_plus": 7,
-      "stall_ratio": 0.4375
+      "open": 15,
+      "stale_60_plus": 6,
+      "stall_ratio": 0.4
     },
     {
       "sub_sector": "crypto-unclassified",
-      "open": 26,
+      "open": 27,
       "stale_60_plus": 9,
-      "stall_ratio": 0.3462
+      "stall_ratio": 0.3333
     },
     {
       "sub_sector": "defi-protocol",
@@ -1005,10 +1005,16 @@
       "stall_ratio": 0.4932,
       "open_total": 73,
       "stale_60_plus": 36
+    },
+    {
+      "date": "2026-10-24",
+      "stall_ratio": 0.4795,
+      "open_total": 73,
+      "stale_60_plus": 35
     }
   ],
   "hiring_velocity": {
-    "opened_7d": 11,
-    "opened_30d": 38
+    "opened_7d": 9,
+    "opened_30d": 39
   }
 }
