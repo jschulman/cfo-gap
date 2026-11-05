@@ -1,15 +1,15 @@
 {
   "metadata": {
     "source": "The CFO Gap",
-    "last_updated": "2026-11-04",
-    "as_of_date": "2026-11-04",
-    "generated_at": "2026-11-04T09:30:03.148Z",
+    "last_updated": "2026-11-05",
+    "as_of_date": "2026-11-05",
+    "generated_at": "2026-11-05T09:30:03.073Z",
     "version": "2.0",
     "next_update": "daily at 03:00 America/Chicago"
   },
   "headline": {
-    "stall_ratio": 0.4051,
-    "open_total": 79,
+    "stall_ratio": 0.4,
+    "open_total": 80,
     "stale_60_plus": 32,
     "label": "% of currently observed finance listings older than 60 days; hiring-friction proxy"
   },
@@ -52,9 +52,9 @@
     },
     {
       "sub_sector": "crypto-unclassified",
-      "open": 34,
+      "open": 35,
       "stale_60_plus": 8,
-      "stall_ratio": 0.2353
+      "stall_ratio": 0.2286
     },
     {
       "sub_sector": "defi-protocol",
@@ -1077,10 +1077,16 @@
       "stall_ratio": 0.4051,
       "open_total": 79,
       "stale_60_plus": 32
+    },
+    {
+      "date": "2026-11-05",
+      "stall_ratio": 0.4,
+      "open_total": 80,
+      "stale_60_plus": 32
     }
   ],
   "hiring_velocity": {
-    "opened_7d": 9,
-    "opened_30d": 39
+    "opened_7d": 8,
+    "opened_30d": 38
   }
 }
