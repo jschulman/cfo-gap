@@ -1,16 +1,16 @@
 {
   "metadata": {
     "source": "The CFO Gap",
-    "last_updated": "2026-11-05",
-    "as_of_date": "2026-11-05",
-    "generated_at": "2026-11-05T09:30:03.073Z",
+    "last_updated": "2026-11-06",
+    "as_of_date": "2026-11-06",
+    "generated_at": "2026-11-06T09:30:02.512Z",
     "version": "2.0",
     "next_update": "daily at 03:00 America/Chicago"
   },
   "headline": {
-    "stall_ratio": 0.4,
-    "open_total": 80,
-    "stale_60_plus": 32,
+    "stall_ratio": 0.3659,
+    "open_total": 82,
+    "stale_60_plus": 30,
     "label": "% of currently observed finance listings older than 60 days; hiring-friction proxy"
   },
   "by_sub_sector": [
@@ -27,34 +27,34 @@
       "stall_ratio": 1
     },
     {
-      "sub_sector": "defi-trading",
-      "open": 7,
-      "stale_60_plus": 5,
-      "stall_ratio": 0.7143
-    },
-    {
       "sub_sector": "infra-rpc-data",
       "open": 3,
       "stale_60_plus": 2,
       "stall_ratio": 0.6667
     },
     {
+      "sub_sector": "defi-trading",
+      "open": 5,
+      "stale_60_plus": 3,
+      "stall_ratio": 0.6
+    },
+    {
       "sub_sector": "custody-wallet",
-      "open": 13,
+      "open": 15,
       "stale_60_plus": 8,
-      "stall_ratio": 0.6154
+      "stall_ratio": 0.5333
     },
     {
       "sub_sector": "fintech-crypto-hybrid",
-      "open": 16,
+      "open": 17,
       "stale_60_plus": 4,
-      "stall_ratio": 0.25
+      "stall_ratio": 0.2353
     },
     {
       "sub_sector": "crypto-unclassified",
-      "open": 35,
+      "open": 36,
       "stale_60_plus": 8,
-      "stall_ratio": 0.2286
+      "stall_ratio": 0.2222
     },
     {
       "sub_sector": "defi-protocol",
@@ -1083,10 +1083,16 @@
       "stall_ratio": 0.4,
       "open_total": 80,
       "stale_60_plus": 32
+    },
+    {
+      "date": "2026-11-06",
+      "stall_ratio": 0.3659,
+      "open_total": 82,
+      "stale_60_plus": 30
     }
   ],
   "hiring_velocity": {
-    "opened_7d": 8,
-    "opened_30d": 38
+    "opened_7d": 10,
+    "opened_30d": 42
   }
 }
