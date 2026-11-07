@@ -1,23 +1,23 @@
 {
   "metadata": {
     "source": "The CFO Gap",
-    "last_updated": "2026-11-06",
-    "as_of_date": "2026-11-06",
-    "generated_at": "2026-11-06T09:30:02.512Z",
+    "last_updated": "2026-11-07",
+    "as_of_date": "2026-11-07",
+    "generated_at": "2026-11-07T09:30:01.568Z",
     "version": "2.0",
     "next_update": "daily at 03:00 America/Chicago"
   },
   "headline": {
-    "stall_ratio": 0.3659,
-    "open_total": 82,
-    "stale_60_plus": 30,
+    "stall_ratio": 0.3457,
+    "open_total": 81,
+    "stale_60_plus": 28,
     "label": "% of currently observed finance listings older than 60 days; hiring-friction proxy"
   },
   "by_sub_sector": [
     {
       "sub_sector": "l1-l2-foundation",
-      "open": 2,
-      "stale_60_plus": 2,
+      "open": 1,
+      "stale_60_plus": 1,
       "stall_ratio": 1
     },
     {
@@ -52,9 +52,9 @@
     },
     {
       "sub_sector": "crypto-unclassified",
-      "open": 36,
-      "stale_60_plus": 8,
-      "stall_ratio": 0.2222
+      "open": 35,
+      "stale_60_plus": 7,
+      "stall_ratio": 0.2
     },
     {
       "sub_sector": "defi-protocol",
@@ -70,7 +70,7 @@
     },
     {
       "sub_sector": "stablecoin-issuer",
-      "open": 1,
+      "open": 2,
       "stale_60_plus": 0,
       "stall_ratio": 0
     }
@@ -1089,10 +1089,16 @@
       "stall_ratio": 0.3659,
       "open_total": 82,
       "stale_60_plus": 30
+    },
+    {
+      "date": "2026-11-07",
+      "stall_ratio": 0.3457,
+      "open_total": 81,
+      "stale_60_plus": 28
     }
   ],
   "hiring_velocity": {
     "opened_7d": 10,
-    "opened_30d": 42
+    "opened_30d": 43
   }
 }
