@@ -1,25 +1,19 @@
 {
   "metadata": {
     "source": "The CFO Gap",
-    "last_updated": "2026-11-11",
-    "as_of_date": "2026-11-11",
-    "generated_at": "2026-11-11T09:30:01.857Z",
+    "last_updated": "2026-11-12",
+    "as_of_date": "2026-11-12",
+    "generated_at": "2026-11-12T09:30:04.187Z",
     "version": "2.0",
     "next_update": "daily at 03:00 America/Chicago"
   },
   "headline": {
-    "stall_ratio": 0.3647,
-    "open_total": 85,
-    "stale_60_plus": 31,
+    "stall_ratio": 0.3889,
+    "open_total": 72,
+    "stale_60_plus": 28,
     "label": "% of currently observed finance listings older than 60 days; hiring-friction proxy"
   },
   "by_sub_sector": [
-    {
-      "sub_sector": "prediction-derivatives",
-      "open": 3,
-      "stale_60_plus": 3,
-      "stall_ratio": 1
-    },
     {
       "sub_sector": "l1-l2-foundation",
       "open": 1,
@@ -27,9 +21,15 @@
       "stall_ratio": 1
     },
     {
-      "sub_sector": "infra-rpc-data",
+      "sub_sector": "prediction-derivatives",
       "open": 3,
-      "stale_60_plus": 2,
+      "stale_60_plus": 3,
+      "stall_ratio": 1
+    },
+    {
+      "sub_sector": "defi-trading",
+      "open": 6,
+      "stale_60_plus": 4,
       "stall_ratio": 0.6667
     },
     {
@@ -39,22 +39,22 @@
       "stall_ratio": 0.6
     },
     {
-      "sub_sector": "defi-trading",
+      "sub_sector": "infra-rpc-data",
       "open": 5,
       "stale_60_plus": 3,
       "stall_ratio": 0.6
     },
     {
-      "sub_sector": "crypto-unclassified",
-      "open": 36,
-      "stale_60_plus": 9,
-      "stall_ratio": 0.25
+      "sub_sector": "fintech-crypto-hybrid",
+      "open": 37,
+      "stale_60_plus": 8,
+      "stall_ratio": 0.2162
     },
     {
-      "sub_sector": "fintech-crypto-hybrid",
-      "open": 19,
-      "stale_60_plus": 4,
-      "stall_ratio": 0.2105
+      "sub_sector": "stablecoin-issuer",
+      "open": 3,
+      "stale_60_plus": 0,
+      "stall_ratio": 0
     },
     {
       "sub_sector": "defi-protocol",
@@ -63,16 +63,22 @@
       "stall_ratio": null
     },
     {
-      "sub_sector": "rwa-tokenization",
+      "sub_sector": "mining",
       "open": 0,
       "stale_60_plus": 0,
       "stall_ratio": null
     },
     {
-      "sub_sector": "stablecoin-issuer",
-      "open": 3,
+      "sub_sector": "rwa-tokenization",
+      "open": 2,
       "stale_60_plus": 0,
       "stall_ratio": 0
+    },
+    {
+      "sub_sector": "crypto-unclassified",
+      "open": 0,
+      "stale_60_plus": 0,
+      "stall_ratio": null
     }
   ],
   "timeseries": [
@@ -1116,13 +1122,19 @@
     },
     {
       "date": "2026-11-11",
-      "stall_ratio": 0.3647,
-      "open_total": 85,
-      "stale_60_plus": 31
+      "stall_ratio": 0.3944,
+      "open_total": 71,
+      "stale_60_plus": 28
+    },
+    {
+      "date": "2026-11-12",
+      "stall_ratio": 0.3889,
+      "open_total": 72,
+      "stale_60_plus": 28
     }
   ],
   "hiring_velocity": {
-    "opened_7d": 11,
-    "opened_30d": 48
+    "opened_7d": 10,
+    "opened_30d": 35
   }
 }
