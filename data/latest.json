@@ -1,16 +1,16 @@
 {
   "metadata": {
     "source": "The CFO Gap",
-    "last_updated": "2026-11-21",
-    "as_of_date": "2026-11-21",
-    "generated_at": "2026-11-21T09:30:01.512Z",
+    "last_updated": "2026-11-22",
+    "as_of_date": "2026-11-22",
+    "generated_at": "2026-11-22T09:30:01.525Z",
     "version": "2.0",
     "next_update": "daily at 03:00 America/Chicago"
   },
   "headline": {
-    "stall_ratio": 0.3553,
+    "stall_ratio": 0.3684,
     "open_total": 76,
-    "stale_60_plus": 27,
+    "stale_60_plus": 28,
     "label": "% of currently observed finance listings older than 60 days; hiring-friction proxy"
   },
   "by_sub_sector": [
@@ -23,8 +23,8 @@
     {
       "sub_sector": "defi-trading",
       "open": 7,
-      "stale_60_plus": 5,
-      "stall_ratio": 0.7143
+      "stale_60_plus": 6,
+      "stall_ratio": 0.8571
     },
     {
       "sub_sector": "custody-wallet",
@@ -1185,10 +1185,16 @@
       "stall_ratio": 0.3553,
       "open_total": 76,
       "stale_60_plus": 27
+    },
+    {
+      "date": "2026-11-22",
+      "stall_ratio": 0.3684,
+      "open_total": 76,
+      "stale_60_plus": 28
     }
   ],
   "hiring_velocity": {
     "opened_7d": 5,
-    "opened_30d": 33
+    "opened_30d": 32
   }
 }
