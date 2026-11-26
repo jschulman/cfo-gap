@@ -1,15 +1,15 @@
 {
   "metadata": {
     "source": "The CFO Gap",
-    "last_updated": "2026-11-25",
-    "as_of_date": "2026-11-25",
-    "generated_at": "2026-11-25T09:30:01.652Z",
+    "last_updated": "2026-11-26",
+    "as_of_date": "2026-11-26",
+    "generated_at": "2026-11-26T09:30:01.635Z",
     "version": "2.0",
     "next_update": "daily at 03:00 America/Chicago"
   },
   "headline": {
-    "stall_ratio": 0.359,
-    "open_total": 78,
+    "stall_ratio": 0.3544,
+    "open_total": 79,
     "stale_60_plus": 28,
     "label": "% of currently observed finance listings older than 60 days; hiring-friction proxy"
   },
@@ -40,9 +40,9 @@
     },
     {
       "sub_sector": "fintech-crypto-hybrid",
-      "open": 41,
+      "open": 42,
       "stale_60_plus": 10,
-      "stall_ratio": 0.2439
+      "stall_ratio": 0.2381
     },
     {
       "sub_sector": "crypto-unclassified",
@@ -1208,6 +1208,12 @@
       "date": "2026-11-25",
       "stall_ratio": 0.359,
       "open_total": 78,
+      "stale_60_plus": 28
+    },
+    {
+      "date": "2026-11-26",
+      "stall_ratio": 0.3544,
+      "open_total": 79,
       "stale_60_plus": 28
     }
   ],
