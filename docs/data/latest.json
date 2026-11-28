@@ -1,9 +1,9 @@
 {
   "metadata": {
     "source": "The CFO Gap",
-    "last_updated": "2026-11-27",
-    "as_of_date": "2026-11-27",
-    "generated_at": "2026-11-27T09:30:01.372Z",
+    "last_updated": "2026-11-28",
+    "as_of_date": "2026-11-28",
+    "generated_at": "2026-11-28T09:30:02.264Z",
     "version": "2.0",
     "next_update": "daily at 03:00 America/Chicago"
   },
@@ -1221,10 +1221,16 @@
       "stall_ratio": 0.3462,
       "open_total": 78,
       "stale_60_plus": 27
+    },
+    {
+      "date": "2026-11-28",
+      "stall_ratio": 0.3462,
+      "open_total": 78,
+      "stale_60_plus": 27
     }
   ],
   "hiring_velocity": {
-    "opened_7d": 10,
-    "opened_30d": 33
+    "opened_7d": 7,
+    "opened_30d": 32
   }
 }
